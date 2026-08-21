@@ -32,6 +32,15 @@ export const INITIAL_CATALOG: Product[] = [
     highlight: true,
   },
   {
+    id: 'smart-tv-65',
+    name: 'Smart TV 65" 4K UHD',
+    category: 'Escritório & Climatização',
+    price: 7506,
+    description: 'Imagens ultra nítidas e recursos smart ideais para salas de reuniões e apresentações corporativas.',
+    image: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=400&q=80',
+    highlight: false,
+  },
+  {
     id: 'herman-miller-style',
     name: 'Cadeira Ergonômica Presidente Premium',
     category: 'Escritório & Climatização',
