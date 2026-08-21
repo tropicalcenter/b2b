@@ -5,8 +5,8 @@ export const WHATSAPP_LINK = "https://wa.me/5596991968631";
 
 export const INITIAL_CATALOG: Product[] = [
   {
-    id: 'iphone-15-pro',
-    name: 'iPhone 15 Pro Max 256GB Titanium',
+    id: 'iphone-16',
+    name: 'iPhone 16 128GB',
     category: 'Tecnologia',
     price: 8999,
     description: 'O smartphone definitivo para gerenciar suas obras e registrar cada detalhe com qualidade cinematográfica.',
