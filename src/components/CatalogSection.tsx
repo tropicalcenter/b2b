@@ -40,7 +40,7 @@ export function CatalogSection({ currentPointsBalance }: CatalogSectionProps) {
           </div>
 
           <div className="flex bg-slate-900 p-1 rounded-xl border border-slate-800 overflow-x-auto whitespace-nowrap">
-            {['Todos', 'Tecnologia', 'Escritório & Climatização', 'Lazer'].map(category => (
+            {['Todos', 'Tecnologia', 'Escritório & Climatização', 'Lazer', 'Ferramentas & Manutenção'].map(category => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}

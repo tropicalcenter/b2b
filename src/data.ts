@@ -84,6 +84,15 @@ export const INITIAL_CATALOG: Product[] = [
     description: 'Para celebrar o faturamento de grandes incorporações e confraternizações da equipe de engenharia.',
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80',
     highlight: true,
+  },
+  {
+    id: 'lavadora-bosch-ghp180',
+    name: 'Lavadora de Alta Pressão GHP 180 127V Bosch',
+    category: 'Ferramentas & Manutenção',
+    price: 2100,
+    description: 'Alta performance para limpeza de equipamentos, veículos e canteiros de obra com a qualidade e durabilidade Bosch.',
+    image: 'https://www.dutramaquinas.com.br/shared/img/produto/alta/485218_lavadora_de_alta_pressao_1800_libras_com_acessorios_ghp_180.jpg',
+    highlight: true,
   }
 ];
 
