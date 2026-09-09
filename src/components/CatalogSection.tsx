@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
-import { Search, MessageSquare, Lock } from 'lucide-react';
+import { Search, MessageSquare, Lock, X } from 'lucide-react';
 import { INITIAL_CATALOG, WHATSAPP_LINK, FATOR_CONVERSAO } from '../data';
+import { Product } from '../types';
 
 interface CatalogSectionProps {
   currentPointsBalance: number;
@@ -9,6 +10,7 @@ interface CatalogSectionProps {
 export function CatalogSection({ currentPointsBalance }: CatalogSectionProps) {
   const [activeCategory, setActiveCategory] = useState('Todos');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const filteredProducts = useMemo(() => {
     return INITIAL_CATALOG.filter(product => {
@@ -59,9 +61,10 @@ export function CatalogSection({ currentPointsBalance }: CatalogSectionProps) {
           const hasEnoughPoints = currentPointsBalance >= pointsRequired;
           
           return (
-            <div 
+            <div
               key={product.id}
-              className={`bg-slate-900/60 hover:bg-slate-900 border ${product.highlight ? 'border-emerald-500/20' : 'border-slate-800'} hover:border-emerald-500/30 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-lg ${!hasEnoughPoints ? 'opacity-90' : ''}`}
+              onClick={() => setSelectedProduct(product)}
+              className={`bg-slate-900/60 hover:bg-slate-900 border ${product.highlight ? 'border-emerald-500/20' : 'border-slate-800'} hover:border-emerald-500/30 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-lg cursor-pointer ${!hasEnoughPoints ? 'opacity-90' : ''}`}
             >
               <div className="h-44 overflow-hidden relative bg-slate-950">
                 <img 
@@ -100,9 +103,9 @@ export function CatalogSection({ currentPointsBalance }: CatalogSectionProps) {
                 </div>
               </div>
 
-              <div className="px-5 pb-5 pt-1">
+              <div className="px-5 pb-5 pt-1" onClick={(e) => e.stopPropagation()}>
                 {hasEnoughPoints ? (
-                  <a 
+                  <a
                     href={WHATSAPP_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -112,7 +115,7 @@ export function CatalogSection({ currentPointsBalance }: CatalogSectionProps) {
                     <span>Resgatar Prêmio</span>
                   </a>
                 ) : (
-                  <button 
+                  <button
                     disabled
                     className="w-full py-2.5 bg-slate-800/80 text-slate-500 text-xs font-black uppercase tracking-wider rounded-xl flex items-center justify-center space-x-2 cursor-not-allowed border border-slate-700/30"
                   >
@@ -125,6 +128,78 @@ export function CatalogSection({ currentPointsBalance }: CatalogSectionProps) {
           );
         })}
       </div>
+
+      {selectedProduct && (() => {
+        const pointsRequired = Math.round(selectedProduct.price / FATOR_CONVERSAO);
+        const hasEnoughPoints = currentPointsBalance >= pointsRequired;
+
+        return (
+          <div
+            className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4"
+            onClick={() => setSelectedProduct(null)}
+          >
+            <div
+              className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="h-64 overflow-hidden relative bg-slate-950">
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  className="w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute top-3 right-3 p-1.5 bg-slate-950/80 hover:bg-slate-950 border border-slate-800 rounded-lg text-slate-300 hover:text-white transition"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+                {selectedProduct.highlight && (
+                  <span className="absolute top-3 left-3 px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-[10px] font-bold tracking-wider uppercase border border-emerald-500/40 rounded">
+                    Destaque B2B
+                  </span>
+                )}
+                <span className="absolute bottom-3 right-3 px-2 py-0.5 bg-slate-950/80 text-slate-300 text-[10px] rounded border border-slate-800">
+                  {selectedProduct.category}
+                </span>
+              </div>
+
+              <div className="p-6 space-y-4">
+                <h3 className="text-xl font-black text-white">{selectedProduct.name}</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">{selectedProduct.description}</p>
+
+                <div className="pt-2 border-t border-slate-800/80">
+                  <span className="text-[10px] text-slate-500 block uppercase font-bold tracking-wider mb-0.5">Valor em Pontos</span>
+                  <div className="flex items-baseline space-x-1">
+                    <span className={`text-3xl font-black ${hasEnoughPoints ? 'text-amber-400' : 'text-slate-500'}`}>{pointsRequired.toLocaleString('pt-BR')}</span>
+                    <span className="text-xs text-slate-400 font-bold">pontos</span>
+                  </div>
+                </div>
+
+                {hasEnoughPoints ? (
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 text-xs font-black uppercase tracking-wider rounded-xl transition duration-300 shadow-lg flex items-center justify-center space-x-2 active:scale-95 hover:shadow-emerald-500/10"
+                  >
+                    <MessageSquare className="w-3.5 h-3.5" />
+                    <span>Resgatar Prêmio</span>
+                  </a>
+                ) : (
+                  <button
+                    disabled
+                    className="w-full py-3 bg-slate-800/80 text-slate-500 text-xs font-black uppercase tracking-wider rounded-xl flex items-center justify-center space-x-2 cursor-not-allowed border border-slate-700/30"
+                  >
+                    <Lock className="w-3.5 h-3.5" />
+                    <span>Pontos Insuficientes</span>
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </section>
   );
 }
