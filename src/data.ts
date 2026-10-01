@@ -14,10 +14,10 @@ export const INITIAL_CATALOG: Product[] = [
     highlight: true,
   },
   {
-    id: 'macbook-air-m3',
-    name: 'MacBook Air M3 15" 16GB / 512GB SSD',
+    id: 'macbook-neo',
+    name: 'MacBook Neo 256GB SSD | 8GB RAM',
     category: 'Tecnologia',
-    price: 16499,
+    price: 10470,
     description: 'Desempenho extraordinário para orçamentos complexos e renderização de projetos BIM em qualquer lugar.',
     image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80',
     highlight: false,
