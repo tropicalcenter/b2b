@@ -41,7 +41,7 @@ export const INITIAL_CATALOG: Product[] = [
     highlight: false,
   },
   {
-    id: 'herman-miller-style',
+    id: 'cadeira-ergonomica',
     name: 'Cadeira Ergonômica Presidente Premium',
     category: 'Escritório & Climatização',
     price: 5899,
@@ -51,7 +51,7 @@ export const INITIAL_CATALOG: Product[] = [
   },
   {
     id: 'ar-split-18k',
-    name: 'Ar Condicionado Split Inverter WindFree 18.000 BTU',
+    name: 'Ar Condicionado Split Inverter 18.000 BTU',
     category: 'Escritório & Climatização',
     price: 6699,
     description: 'Economia de energia extrema e conforto térmico sob medida para o escritório central da sua construtora.',
@@ -68,8 +68,8 @@ export const INITIAL_CATALOG: Product[] = [
     highlight: false,
   },
   {
-    id: 'cervejeira-venax',
-    name: 'Cervejeira Premium Venax Blue Light 100L',
+    id: 'cervejeira-premium',
+    name: 'Cervejeira Premium 100L',
     category: 'Lazer',
     price: 5499,
     description: 'O complemento perfeito para a área gourmet da sua construtora ou celebrações de entrega de chaves.',
