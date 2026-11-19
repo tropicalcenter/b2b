@@ -87,7 +87,7 @@ Atualmente o catálogo possui **9 produtos**:
 | `smart-tv-75` | **Smart TV 75" Samsung Crystal UHD 4K** | Escritório & Climatização | R$ 8.499 | **283.300 pts** | ⭐ Sim |
 | `smart-tv-65` | **Smart TV 65" 4K UHD** | Escritório & Climatização | R$ 7.506 | **250.200 pts** | Não |
 | `cadeira-ergonomica`| **Cadeira Ergonômica Presidente Premium** | Escritório & Climatização | R$ 5.899 | **196.633 pts** | Não |
-| `ar-split-18k` | **Ar Condicionado Split Inverter 18.000 BTU** | Escritório & Climatização | R$ 6.699 | **223.300 pts** | Não |
+| `ar-split-18k` | **Ar Condicionado 18.000 BTU** | Escritório & Climatização | R$ 6.699 | **223.300 pts** | Não |
 | `expresso-oster` | **Cafeteira Expresso Super Automática Oster** | Lazer | R$ 6.299 | **209.967 pts** | Não |
 | `cervejeira-premium` | **Cervejeira Premium 100L** | Lazer | R$ 5.499 | **183.300 pts** | Não |
 | `churrasqueira-parrilla`| **Parrilla Gourmet Inox Tijolos Refratários** | Lazer | R$ 7.800 | **260.000 pts** | ⭐ Sim |

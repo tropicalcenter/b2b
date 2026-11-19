@@ -124,7 +124,7 @@ O cálculo de conversão entre valor em Reais (R$) e Pontos é definido pela con
 | **Escritório** | Smart TV 75" Samsung Crystal UHD 4K | 283.300 pts | ⭐ Sim |
 | **Escritório** | Smart TV 65" 4K UHD | 250.200 pts | Não |
 | **Escritório** | Cadeira Ergonômica Presidente Premium | 196.633 pts | Não |
-| **Escritório** | Ar Condicionado Split Inverter 18.000 BTU | 223.300 pts | Não |
+| **Escritório** | Ar Condicionado 18.000 BTU | 223.300 pts | Não |
 | **Lazer** | Cafeteira Expresso Super Automática Oster | 209.967 pts | Não |
 | **Lazer** | Cervejeira Premium 100L | 183.300 pts | Não |
 | **Lazer** | Parrilla Gourmet Inox com Tijolos Refratários | 260.000 pts | ⭐ Sim |

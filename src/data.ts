@@ -51,7 +51,7 @@ export const INITIAL_CATALOG: Product[] = [
   },
   {
     id: 'ar-split-18k',
-    name: 'Ar Condicionado Split Inverter 18.000 BTU',
+    name: 'Ar Condicionado 18.000 BTU',
     category: 'Escritório & Climatização',
     price: 6699,
     description: 'Economia de energia extrema e conforto térmico sob medida para o escritório central da sua construtora.',
